@@ -68,12 +68,12 @@ static const struct arg args[] = {
 	/* function format          argument */
     {run_command, "   %s% |", "pamixer --get-volume"},
     {run_command, " 4060 %s% |", "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits"},
-    {run_command, " %s% |", "nvidia-smi --query-gpu=pcie.tx_util,pcie.rx_util --format=csv,noheader"},
     {run_command, "   %s󰔄 |", "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader"},
     {cpu_perc, "   %s% |", NULL},
     {run_command, " %s |", "sensors | grep 'Tctl' | awk '{print $2}'"},
     {ram_used, "   %s |", NULL},
     {disk_free, "   %s GB |", "/home"},
+    {run_command, " 󰂯  [%s] |", "bluetoothctl info | awk -F: '/Name/ {print $2}' | xargs"},
     {run_command, " %s ", "date +%H:%M"},
     {run_command, " %s ", "date +'%b %d'"},
 };
