@@ -1,2 +1,7 @@
 
 @theme "/home/adart/.config/rofi/ned.rasi"
+
+configuration {
+    kb-paste: "Control+Shift+v";
+}
+
