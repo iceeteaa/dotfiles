@@ -73,7 +73,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "/usr/local/bin/st", NULL };
-static const char *rofi[]  = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/config.rasi", NULL };
+static const char *rofi_d[]  = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/config.rasi", NULL };
+static const char *rofi[]  = { "rofi", "-show", "run", "-theme", "~/.config/rofi/config.rasi", NULL };
 static const char *volupcmd[]   = { "pamixer", "--increase", "5", NULL };
 static const char *voldowncmd[] = { "pamixer", "--decrease", "5", NULL };
 static const char *volmutecmd[] = { "pamixer", "--toggle-mute", NULL };
@@ -85,7 +86,8 @@ static const char *prevcmd[] = { "playerctl", "previous", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_p,      spawn,          {.v = rofi } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = rofi_d} },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = rofi} },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
