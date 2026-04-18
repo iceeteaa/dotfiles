@@ -67,7 +67,7 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format          argument */
     {run_command, "   %s% |", "pamixer --get-volume"},
-    {run_command, " 4060 %s% |", "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits"},
+    {run_command, " GPU %s% |", "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits"},
     {run_command, "   %s󰔄 |", "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader"},
     {cpu_perc, "   %s% |", NULL},
     {run_command, " %s |", "sensors | grep 'Tctl' | awk '{print $2}'"},
